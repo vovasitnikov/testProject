@@ -56,10 +56,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public ResponseEntity <UserModel> delete(@RequestParam(value = "id") Long id){
-        return ResponseEntity
-                .status(HttpStatus.OK);
+    public void delete(@RequestParam(value = "id") Long id){
+        userRepository.deleteById(id);
     }
-
-
 }

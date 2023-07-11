@@ -50,6 +50,7 @@ public class UserController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity <UserModel> update(@RequestBody UserModel userModel,
                                              @RequestParam(value = "id") Long id){
+        userModel.setId(id);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(userRepository.save(userModel));

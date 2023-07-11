@@ -31,6 +31,8 @@ public class ItemModel {
     @Column(name = "cost_per_day")
     private String costPerDay;
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
     private UserModel userModel;
 
 }
